@@ -1,0 +1,154 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-blur {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.hero-section {
+    width: 100%;
+    height: 40vh;
+    background-image: url('../assets/img.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: white;
+    z-index: 10;
+}
+
+.custom-card {
+    transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+.up-card {
+    margin-top: -30px;
+}
+
+.down-card {
+    margin-top: 20px;
+}
+
+.team-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/3;
+    /* Ini bikin vertikal secara otomatis */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.team-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card {
+    width: 100%;
+    max-width: 220px;
+    /* Biar card tetap kecil meskipun col-md-4 gede */
+}
+
+.team-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-image-wrapper:hover .team-hover-overlay {
+    opacity: 1;
+}
+
+.team-info-box {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.team-info-box h6 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.team-info-box p {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+}
+
+.team-info-box .social-icons a {
+    color: #555;
+    margin: 0 5px;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.team-info-box .social-icons a:hover {
+    color: #0d6efd;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.cta-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+
+    .up-card,
+    .down-card {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Travelina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="css/booking.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/logo1.png">
+
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-blur navbar-expand-lg navbar-light sticky-top" data-aos="fade-right" data-aos-delay="100"
+        data-aos-duration="800" data-aos-true>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/travelina.png" alt="Logo" width="120" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav gap-4">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="About.html">About Us</a>
+                    <a class="nav-link" href="destination.html">Destination</a>
+                    <a class="nav-link active" href="booking.html">Booking</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Contact Information Start -->
+    <section id="booking" class="py-4">
+        <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-4 mt-4">Reservation Form</h2>
+                    <div class="mb-4">
+                        <h5 class="mb-3">1. Contact Information</h5>
+                        <form id="bookingForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control rounded-pill" id="firstName"
+                                        placeholder="First Name" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control rounded-pill" id="lastName"
+                                        placeholder="Last Name" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control rounded-pill" id="phone"
+                                        placeholder="Phone Number" required>
+                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control rounded-pill" id="email" placeholder="Email"
+                                        required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="row g-3 mt-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Destination</label>
+                                    <select id="destination" class="form-select rounded-pill" required>
+                                        <option selected disabled value="">Choose destination</option>
+                                        <option>Bali, Indonesia</option>
+                                        <option>Bangkok, Thailand</option>
+                                        <option>Kyoto, Japan</option>
+                                        <option>Dubai, UAE</option>
+                                    </select>
+                                    <div class="invalid-feedback">Select a destination.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label ">Check-In</label>
+                                    <input type="date" class="form-control rounded-pill" id="checkIn" required>
+                                    <div class="invalid-feedback">Select check-in date.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Check-Out</label>
+                                    <input type="date" class="form-control rounded-pill" id="checkOut" required>
+                                    <div class="invalid-feedback">Select check-out date.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Guests</label>
+                                    <input type="number" class="form-control rounded-pill" id="guests" min="1" value="1"
+                                        required>
+                                    <div class="invalid-feedback">At least 1 guest required.</div>
+                                </div>
+                            </div>
+                            <!-- Contact Information End -->
+
+                            <!-- Payment Method Start-->
+                            <div>
+                                <h5 class="mt-5 mb-4">2. Payment Method</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input hide-radio" type="radio" name="paymentMethod"
+                                                id="creditCard" checked>
+                                            <label class="form-check-label" for="creditCard">
+                                                <i class="bi bi-credit-card me-2"></i>Credit/Debit Card
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input hide-radio" type="radio" name="paymentMethod"
+                                                id="paypal">
+                                            <label class="form-check-label" for="paypal">
+                                                <i class="bi bi-paypal me-2"></i>PayPal
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input hide-radio" type="radio" name="paymentMethod"
+                                                id="bank">
+                                            <label class="form-check-label" for="bank">
+                                                <i class="bi bi-bank me-2"></i>Bank Transfer
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Card Name</label>
+                                        <input type="text" class="form-control rounded-pill" required>
+                                        <div class="invalid-feedback">Please enter name on card.</div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Card Number</label>
+                                        <input type="text" class="form-control rounded-pill"
+                                            placeholder="xxxx xxxx xxxx xxxx" pattern="^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$"
+                                            required>
+                                        <div class="invalid-feedback">Enter a valid 16-digit card number.</div>
+                                    </div>
+                                    <div class="col-md-3 mt-3">
+                                        <label class="form-label">CVC</label>
+                                        <input type="text" class="form-control rounded-pill" pattern="^\d{3,4}$"
+                                            required>
+                                        <div class="invalid-feedback">3–4 digit CVC required.</div>
+                                    </div>
+                                    <div class="col-md-3 mt-3">
+                                        <label class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-control rounded-pill" placeholder="MM/YY"
+                                            pattern="^(0[1-9]|1[0-2])\/\d{2}$" required>
+                                        <div class="invalid-feedback">Format must be MM/YY.</div>
+                                    </div>
+                                </div>
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" id="rememberCard">
+                                    <label class="form-check-label" for="rememberCard">
+                                        Remember this card for future use
+                                    </label>
+                                </div>
+                                <div class="mt-4">
+                                    <button class="btn btn-warning btn-lg w-100 rounded-pill" type="submit">Confirm
+                                        Booking</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Payment Method End -->
+                
+                <!-- Right Column: Booking Summary -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <img src="assets/balitample.jpg" class="card-img-top" alt="Destination" id="summary-image">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2" id="sum-destination">Destination Summary</h5>
+                            <ul class="list-unstyled lh-lg">
+                                <li class="d-flex justify-content-between"><span>Dates:</span> <strong
+                                        id="sum-dates">—</strong></li>
+                                <li class="d-flex justify-content-between"><span>Guests:</span> <strong
+                                        id="sum-guests">—</strong></li>
+                                <li class="d-flex justify-content-between"><span>Subtotal:</span> <strong>$130</strong>
+                                </li>
+                                <li class="d-flex justify-content-between"><span>Discount:</span> <strong
+                                        class="text-danger">−$70</strong></li>
+                                <li class="d-flex justify-content-between"><span>Shipping:</span> <strong>Free</strong>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold fs-5">
+                                <span>Total:</span>
+                                <span>$69</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100 mt-3 rounded-pill"
+                                type="button">Checkout</button>
+                            <p class="text-muted small mt-2 text-center">By confirming, you agree to our terms.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancellation Policy Start -->
+    <section class="cancel-policy-section my-4">
+        <div class="container">
+            <h2 class="fw-bold mb-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">Cancelation Policy
+            </h2>
+            <ul class="small text-muted" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                <li class="py-1">Cancellations made more than 7 days prior to the departure date are eligible for a full
+                    refund.</li>
+                <li class="py-1">Cancellations made 3 to 7 days before departure will incur a 50% cancellation fee.</li>
+                <li class="py-1">Cancellations made less than 3 days prior to departure are non-refundable.</li>
+                <li class="py-1">All cancellation requests must be submitted officially via email or our customer
+                    service contact.</li>
+            </ul>
+        </div>
+        <div class="container">
+            <h2 class="fw-bold mb-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">Essential
+                Information Before Proceeding</h2>
+            <ul class="small text-muted" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                <li class="py-1">Please ensure that all the information you provide is accurate and complete. Data
+                    cannot be
+                    modified after payment is processed.</li>
+                <li class="py-1">You are required to retain and present official proof of payment upon check-in or when
+                    requested by our staff.</li>
+                <li class="py-1">Departure schedules are subject to change. Any updates will be communicated via your
+                    registered email or WhatsApp number.</li>
+                <li class="py-1">For your transaction security, please make payments only to our official bank account
+                    listed on the system.</li>
+            </ul>
+        </div>
+    </section>
+    <!-- Cancellation Policy End -->
+
+    <!-- footer start -->
+    <section>
+        <footer class="bg-light text-dark pt-5 pb-4 mt-3">
+            <div class="container text-md-left">
+                <div class="row text-md-left">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4" data-aos="fade-right" data-aos-delay="500"
+                        data-aos-duration="1000">
+                        <img src="/assets/travelina1.png" alt="Logo" class="mb-3 mx-4"
+                            style="width: 150px; height: 150px; object-fit: contain;">
+                        <p class="text-dark small" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                            At Adit Tour, we help you create unforgettable moments with seamless, safe, and exciting
+                            travel experiences. We’ve got your trip covered with expert service and friendly support.
+                        </p>
+                        <div class="d-flex mt-3" data-aos="fade-up" data-aos-delay="10" data-aos-duration="600">
+                            <a href="#" class="me-3 text-reset fs-5"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3 text-reset fs-5"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="me-3 text-reset fs-5"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" data-aos="fade-up" data-aos-delay="100"
+                        data-aos-duration="800">
+                        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                        <p><a href="#" class="text-dark small text-decoration-none">Company History</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Vision & Mission</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Meet the Team</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Careers</a></p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" data-aos="fade-up" data-aos-delay="200"
+                        data-aos-duration="800">
+                        <h6 class="text-uppercase fw-bold mb-4">Our Services</h6>
+                        <p><a href="#" class="text-dark small text-decoration-none">Open Trip</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Private Trip</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Tour Guide</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Travel Conusltation</a></p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" data-aos="fade-up" data-aos-delay="300"
+                        data-aos-duration="800">
+                        <h6 class="text-uppercase fw-bold mb-4">Helpful Links</h6>
+                        <p><a href="#" class="text-dark small text-decoration-none">FAQs</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Support</a></p>
+                        <p><a href="#" class="text-dark small text-decoration-none">Live Chat</a></p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" data-aos="fade-up" data-aos-delay="400"
+                        data-aos-duration="800">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+                        <p class="text-dark small"><i class="fas fa-envelope me-2"></i> Adit.Tour@Gmail.com</p>
+                        <p class="text-dark small"><i class="fas fa-phone me-2"></i> 0123456789</p>
+                        <p class="text-dark small"><i class="fas fa-map-marker-alt me-2"></i> 57148, Surakarta,
+                            Indonesia</p>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2022 Adit Tour</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-reset text-decoration-none me-3">Terms & Conditions</a>
+                        <a href="#" class="text-reset text-decoration-none">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- Footer End -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20/build/js/utils.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

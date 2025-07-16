@@ -1,0 +1,31 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-blur {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hide-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-check-input:checked+.form-check-label {
+    background-color: #eef;
+    border-radius: 30px;
+    padding: 6px 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    cursor: pointer;
+}
